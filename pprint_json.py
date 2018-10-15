@@ -1,21 +1,15 @@
 #!/usr/bin/env python3
-# /home/atollye/current/programming_exercises/4_json/pprint_json.py
+
 import os
 import sys
 import json
 
-
-
 """
-написать скрипт, который на вход принимает путь до файла с произвольными данными
- в формате JSON и выводит его содержимое в консоль в удобном для чтения виде:
-  добавляет переносы строк, отступы слева и пробелы.
-
-нужно проверить, передал ли пользователь путь к файлу,
- существует ли файл, json ли в файле, а затем обрабатывать.
+скрипт принимает путь до файла с произвольными данными в формате JSON
+ и выводит его содержимое в консоль в удобном для чтения виде:
+ добавляет переносы строк, отступы слева и пробелы.
 """
 
-PATH = r"/home/atollye/current/programming_exercises/3_bars/shops.json"
 
 def get_path_to_file():
     try:
@@ -24,21 +18,25 @@ def get_path_to_file():
         pth = None
     return pth
 
+
 def load_data(filepath):
     try:
-        with open(filepath, "r") as file: 
-            file_obj = json.load(file, encoding='utf-8')
+        with open(filepath, "r") as file:
+            data = json.load(file)
     except json.JSONDecodeError:
-        file_obj = None
-    return file_obj
+        data = None
+    return data
+
 
 def error_exit(message):
     print(message)
     sys.exit()
 
-def pretty_print_json(fileobj):
-    out_str = json.dumps(fileobj, sort_keys=True, indent=4)
+
+def pretty_print_json(data):
+    out_str = json.dumps(data, ensure_ascii=False, indent=4)
     print(out_str)
+
 
 def main():
     pth = get_path_to_file()
@@ -47,16 +45,12 @@ def main():
     if not os.path.isfile(pth):
         error_exit("Файл по введенному пути не существует")
     else:
-        fileobj = load_data(pth)
-    if not fileobj:
+        data = load_data(pth)
+    if not data:
         error_exit("В файле не json")
     else:
-        pretty_print_json(fileobj)
+        pretty_print_json(data)
+
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
