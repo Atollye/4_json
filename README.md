@@ -1,45 +1,48 @@
 # Prettify JSON
 
-This script allows you to open a JSON file and print out its contents to the console in a human-readable form
+This script allows you to open a JSON file and print out its content to the console in a human-readable form
 (i.e. with newlines, left indents for each data level and extra spaces between words).
 
 ## Usage
 
-Clone or download the project to your computer. Unzip the archive, if necessary. Run the file *pprint_json.py* in your console, giving the path to the JSON file as the first argument.
+Clone or download the project to your computer. Run the file *pprint_json.py* in your console, giving the path to the JSON file as the first argument.
 
-Example of script launch on Linux, Python 3.5:
+*Example of script launch on Linux, Python 3.5:*
 
 ```
 $ python pprint_json.py <full path to JSON file>
+
 {
     "properties": {
+        "RowId": "243b42c4-294d-451e-919b-0d65b9811c84",
+        "ReleaseNumber": 2,
+        "VersionNumber": 2,
+        "DatasetId": 1796,
         "Attributes": {
-            "AdmArea": "Юго-Восточный административный округ",
-            "District": "район Кузьминки",
-            "global_id": 171714335,
-            "ClarificationOfWorkingHours": null,
-            "TypeService": "реализация продовольственных товаров",
-            "IsNetObject": "нет",
-            "Address": "Волгоградский проспект, дом 106, корпус 1",
-            "WorkingHours": [
-                {
-                    "Hours": "09:00-23:00",
-                    "DayOfWeek": "понедельник"
-                },
-...
-                {
-                    "Hours": "09:00-23:00",
-                    "DayOfWeek": "воскресенье"
-                }
-            ],
+            "Address": "город Зеленоград, корпус 315",
+            "OperatingCompany": null,
+            "District": "район Савёлки",
+            "global_id": 281494735,
+            "Name": "Гудсон бар",
+            "AdmArea": "Зеленоградский административный округ",
+            "SeatsCount": 30,
             "PublicPhone": [
                 {
-                    "PublicPhone": "нет телефона"
+                    "PublicPhone": "(499) 740-97-58"
                 }
             ],
-            "OperatingCompany": null,
-            "Name": "Крафтовое пиво"
-        }, ...
+            "IsNetObject": "нет",
+            "SocialPrivileges": "нет"
+        }
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            37.744234974114,
+            55.917568731248
+        ]
+    }, ....
 ```
 ## Restrictions of this script
 1. This version of the project works only with files on your local computer (not with links to JSON files in the Web).
