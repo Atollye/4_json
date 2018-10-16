@@ -5,9 +5,9 @@ import sys
 import json
 
 """
-скрипт принимает путь до файла с произвольными данными в формате JSON
- и выводит его содержимое в консоль в удобном для чтения виде:
- добавляет переносы строк, отступы слева и пробелы.
+This script allows you to open a JSON file and print out its contents
+ to the console in a human-readable form (i.e. with newlines, left
+ indents for each data level and extra spaces between words).
 """
 
 
