@@ -1,11 +1,11 @@
 # Prettify JSON
 
 This script allows you to open a JSON file and print out its content to the console in a human-readable form
-(i.e. with newlines, left indents for each data level and extra spaces between words).
+(i.e. with newlines, left indents for each level of data structure and extra spaces between words).
 
 ## Usage
 
-Clone or download the project to your computer. Run the file *pprint_json.py* in your console, giving the path to the JSON file as the first argument.
+Clone or download the project to your computer. Run the file *pprint_json.py* in your console, giving a path to a JSON file as the first argument.
 
 *Example of script launch on Linux, Python 3.5:*
 
@@ -44,10 +44,9 @@ $ python pprint_json.py <full path to JSON file>
         ]
     }, ....
 ```
-## Restrictions of this script
-1. This version of the project works only with files on your local computer (not with links to JSON files in the Web).
-2. It reads files using your defualt system encoding (utf-8 for Debian Linux, cp1251 for Windows,mac_cyrillic for Mac). 
-If a JSON file encoding does not match your system encoding, Cyrillic letters may not be displayed correctly.
+## Restrictions of this version of the script
+1. This version of the script works only with files on your local computer (not with links to JSON files on the Web).
+2. It reads files using your defualt system encoding (utf-8 for Debian Linux, cp1251 for Windows, mac_cyrillic for Mac). If a JSON file encoding does not match your system encoding, Cyrillic letters may not be displayed correctly.
 
 ## Project Goals
 The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
